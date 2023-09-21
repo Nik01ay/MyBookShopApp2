@@ -33,4 +33,33 @@ public class MainPageController {
         return "index";
     }
 
+
+    @GetMapping("/postponed")
+    public String postponedPage(){
+        return "postponed";
+    }
+    @GetMapping("/cart")
+    public String cartPage(){
+        return "cart";
+    }
+    @GetMapping("/signin")
+    public String signinPage(){
+        return "signin";
+    }
+    @GetMapping("/about")
+    public String aboutPage(){
+        return "about";
+    }
+    @GetMapping("/faq")
+    public String faqPage(){
+        return "faq";
+    }
+
+    @GetMapping("/contacts")
+    public String contactPage(){
+        return "contacts";
+    }
+
+
+
 }
