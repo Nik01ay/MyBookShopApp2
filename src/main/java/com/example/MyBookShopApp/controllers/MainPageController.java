@@ -60,6 +60,9 @@ public class MainPageController {
         return "contacts";
     }
 
-
+    @GetMapping("/documents/index")
+    public String docIndexPage(){
+        return "/documents/index";
+    }
 
 }
