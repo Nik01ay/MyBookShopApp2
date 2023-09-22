@@ -33,17 +33,15 @@
                         <h2 class="Authors-title" th:id="${authorGroup['key']}" th:text="${authorGroup['key']}">  А
                         </h2>
                         <div class="Authors-letter" th:each="author : ${authorGroup['value']}">
-                            <div class="Authors-item" th:text="${author.name}" ><a href="/authors/slug.html">Абгарян Наринэ</a>
-                                <div  th:each="book : ${author.bookList}">
-                                    <a th:text="${book.title}">Техника</a>
+                            <div class="Authors-item"  ><a href="/authors/slug.html" th:text="${author.lastName + ' ' + author.firstName}">Абгарян Наринэ</a>
 
 
 
                                 </div>
                                 <br>
-                            </div>
+                            </div-->
                         </div>
-                    </div>
+                    </div-->
                 </div>
 
             </div>
