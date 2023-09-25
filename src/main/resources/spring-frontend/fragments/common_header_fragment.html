@@ -32,14 +32,7 @@
                     </div>
                 </div>
                 <div class="row-block Header-cart" th:replace="~{fragments/cart_block_fragment :: ${status}}"></div>
-                <p>
-                    <span>Выбор языка</span>
-                    <select id="locales">
-                        <option value=" "></option>
-                        <option value="en">English</option>
-                        <option value="ru">Русский</option>
-                    </select>
-                </p>
+
                 <div class="row-block Header-trigger"><a class="menuTrigger" href="#navigate">
                     <div class="menuTrigger-content">Показать навигацию
                     </div>
@@ -71,25 +64,13 @@
                     </li>
 
                 </ul>
+
             </nav>
         </div>
     </div>
 
     <script src="https://ajax.googleapis/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $("#locales").change(function(){
-                alert('wef');
-                var selectedOption = $("#locales").val();
-                alert(selectedOption);
-                if (selectedOption != ''){
-                window.location.replace('?lang=' + selectedOption);
-                 alert(selectedOption);
-            }
-        });
-    });
 
-</script>
 </header>
 
 
