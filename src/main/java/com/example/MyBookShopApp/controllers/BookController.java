@@ -1,16 +1,14 @@
 package com.example.MyBookShopApp.controllers;
 
-import com.example.MyBookShopApp.data.Author;
-import com.example.MyBookShopApp.data.AuthorService;
-import com.example.MyBookShopApp.data.Book;
-import com.example.MyBookShopApp.data.BookService;
+
+import com.example.MyBookShopApp.entity.book.BookEntity;
+import com.example.MyBookShopApp.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class BookController {
@@ -23,7 +21,7 @@ public class BookController {
     }
 
     @ModelAttribute("booksList")
-    public List<Book> bookList(){
+    public List<BookEntity> bookList(){
         return bookService.getBooksData();
     }
 
