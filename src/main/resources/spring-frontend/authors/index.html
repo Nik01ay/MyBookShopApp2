@@ -27,37 +27,38 @@
 
             <div class="Section">
                 <div class="Authors">
-                    <div class="Authors-links"><a class="Authors-link" href="#A">А</a><a class="Authors-link" href="#B">Б</a><a class="Authors-link" href="#V">В</a><a class="Authors-link" href="#G">Г</a><a class="Authors-link" href="#d">Д</a><a class="Authors-link" href="#e">Е</a><a class="Authors-link" href="#e">Ё</a><a class="Authors-link" href="#ge">Ж</a><a class="Authors-link" href="#z">З</a><a class="Authors-link" href="#i">И</a><a class="Authors-link" href="#ik">Й</a><a class="Authors-link" href="#k">К</a><a class="Authors-link" href="#l">Л</a><a class="Authors-link" href="#m">М</a><a class="Authors-link" href="#n">Н</a><a class="Authors-link" href="#o">О</a><a class="Authors-link" href="#p">П</a><a class="Authors-link" href="#r">Р</a><a class="Authors-link" href="#s">С</a><a class="Authors-link" href="#t">Т</a><a class="Authors-link" href="#u">У</a><a class="Authors-link" href="#f">Ф</a><a class="Authors-link" href="#h">Х</a><a class="Authors-link" href="#c">Ц</a><a class="Authors-link" href="#ch">Ч</a><a class="Authors-link" href="#sh">Ш</a><a class="Authors-link" href="#shh">Щ</a><a class="Authors-link" href="#ye">Э</a><a class="Authors-link" href="#yu">Ю</a><a class="Authors-link" href="#ya">Я</a>
+                    <div class="Authors-links"><a class="Authors-link" href="#A">А</a><a class="Authors-link" href="#B">Б</a><a
+                            class="Authors-link" href="#V">В</a><a class="Authors-link" href="#G">Г</a><a
+                            class="Authors-link" href="#d">Д</a><a class="Authors-link" href="#e">Е</a><a
+                            class="Authors-link" href="#e">Ё</a><a class="Authors-link" href="#ge">Ж</a><a
+                            class="Authors-link" href="#z">З</a><a class="Authors-link" href="#i">И</a><a
+                            class="Authors-link" href="#ik">Й</a><a class="Authors-link" href="#k">К</a><a
+                            class="Authors-link" href="#l">Л</a><a class="Authors-link" href="#m">М</a><a
+                            class="Authors-link" href="#n">Н</a><a class="Authors-link" href="#o">О</a><a
+                            class="Authors-link" href="#p">П</a><a class="Authors-link" href="#r">Р</a><a
+                            class="Authors-link" href="#s">С</a><a class="Authors-link" href="#t">Т</a><a
+                            class="Authors-link" href="#u">У</a><a class="Authors-link" href="#f">Ф</a><a
+                            class="Authors-link" href="#h">Х</a><a class="Authors-link" href="#c">Ц</a><a
+                            class="Authors-link" href="#ch">Ч</a><a class="Authors-link" href="#sh">Ш</a><a
+                            class="Authors-link" href="#shh">Щ</a><a class="Authors-link" href="#ye">Э</a><a
+                            class="Authors-link" href="#yu">Ю</a><a class="Authors-link" href="#ya">Я</a>
                     </div>
                     <div class="Authors-block" th:each="authorGroup : ${authorsMap}"><br>
-                        <h2 class="Authors-title" th:id="${authorGroup['key']}" th:text="${authorGroup['key']}">  А
+                        <h2 class="Authors-title" th:id="${authorGroup['key']}" th:text="${authorGroup['key']}"> А
                         </h2>
                         <div class="Authors-letter" th:each="author : ${authorGroup['value']}">
-                            <div class="Authors-item"  ><a href="/authors/slug.html" th:text="${author.lastName + ' ' + author.firstName}">Абгарян Наринэ</a>
+                            <div class="Authors-item"><a href="/authors/slug.html" th:text="${author.name}">Абгарян
+                                Наринэ</a>
 
 
-
-                                </div>
-                                <br>
-                            </div-->
+                            </div>
+                            <br>
                         </div>
-                    </div-->
+                    </div>
                 </div>
 
+
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         </main>
