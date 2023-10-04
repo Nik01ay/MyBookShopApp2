@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -24,7 +25,7 @@ public class BookController {
 
     @ModelAttribute("newBooks")
     public List<BookEntity> newBooks(){
-        return bookService.getBooksData();
+        return new ArrayList<>();
     }
 
     @ModelAttribute("booksList")

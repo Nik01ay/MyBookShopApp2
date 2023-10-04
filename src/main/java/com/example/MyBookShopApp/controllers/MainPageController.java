@@ -28,6 +28,11 @@ public class MainPageController {
         return bookService.getBooksData();
     }
 
+    @ModelAttribute("newBooks")
+    public List<BookEntity> newBooks(){
+        return bookService.getBooksData();
+    }
+
 
     @ModelAttribute("popularBooks")
     public List<BookEntity> popularBooks(){
