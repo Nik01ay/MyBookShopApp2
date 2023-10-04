@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <div class="Cards Cards_refresh" th:fragment="pool">
-    <div class="Card" th:each="book: ${booksList}">
+
+    <div class="Card" th:each="book: ${searchResults}">
         <div class="Card-picture">
             <a href="#a" th:href="${book.id}">
                 <img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
@@ -11,7 +12,7 @@
             <strong class="Card-title">
                 <a href="#" th:text="${book.title}"></a>
             </strong>
-            <div class="Card-description" th:text="${book.authorId}"></div>
+            <div class="Card-description">id автора</div>
             <div class="Card-cost">
 
                 <span th:if="${book.priceOld != book.price}" class="Card-priceOld" th:text="${book.priceOld}">₽300.00</span>
@@ -19,5 +20,6 @@
             </div>
         </div>
     </div>
+
 </div>
 </html>
