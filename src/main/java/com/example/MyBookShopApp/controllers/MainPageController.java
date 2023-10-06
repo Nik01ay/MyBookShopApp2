@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,13 +31,15 @@ public class MainPageController {
 
     @ModelAttribute("newBooks")
     public List<BookEntity> newBooks(){
-        return bookService.getBooksData();
+        return bookService.getPageOfDateBooks(LocalDate.now().minusMonths(45), LocalDate.now(),0, 5).getContent();
     }
 
 
     @ModelAttribute("popularBooks")
     public List<BookEntity> popularBooks(){
-        return bookService.getBooksData();
+        bookService.calculateRatingAllBooksAndSave();
+        return bookService.getPageofPopularBooks(0.5,0,5).getContent();
+
     }
 
 
@@ -53,7 +56,7 @@ public class MainPageController {
 
     @GetMapping("/")
     public String mainPage(){
-        return "index";
+        return "index.html";
     }
 
 

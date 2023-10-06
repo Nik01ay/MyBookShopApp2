@@ -135,6 +135,14 @@ public class BookEntity {
     @ApiModelProperty("book title")
     private String title;
 
+    @Getter
+    @Setter
+    @Column(columnDefinition = "FLOAT")
+    @ApiModelProperty("raiting book in magazine")
+    private Double raiting;
+
+
+
 
 
 

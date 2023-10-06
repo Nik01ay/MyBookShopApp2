@@ -26,6 +26,13 @@ List<BookEntity> getBooksWithMaxDiscount();
     Page<BookEntity> findBooksByTitleContaining(String bookTitle, Pageable nextPage);
 
     Page<BookEntity>  findByPubDateBetween(LocalDateTime fromDate, LocalDateTime toDate, Pageable nextPage);
+    @Query(value = "SELECT * FROM books WHERE discount=(SELECT MAX(discount) FROM books)", nativeQuery = true)
+    Page<BookEntity> getBooksWithMaxDiscount(Pageable nextPage);
+
+
+    Page<BookEntity> findByRaitingGreaterThan(Double minRating, Pageable pageable);
+
+
 
  /*   @Query("from Book")
     List<BookEntity> customFindAllBooks();

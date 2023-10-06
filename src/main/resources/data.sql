@@ -253,34 +253,34 @@ INSERT INTO `book2genre` (`id`, `book_id`, `genre_id`) VALUES (50, 10, 2);
 
 INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (1, 1, '2021-04-21 02:11:32', 1, 1);
 INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (2, 2, '2018-12-22 09:19:24', 2, 2);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (3, 3, '2020-12-14 01:49:24', 3, 3);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (3, 3, '2020-12-14 01:49:24', 2, 3);
 INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (4, 4, '2023-03-30 11:14:05', 4, 4);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (5, 5, '2023-07-29 05:24:05', 5, 5);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (6, 6, '2019-11-21 11:23:32', 6, 6);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (7, 7, '2022-06-07 17:53:02', 7, 7);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (8, 8, '2019-07-13 17:02:05', 8, 8);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (9, 9, '2019-08-22 18:13:41', 9, 9);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (10, 10, '2020-08-08 11:13:13', 10, 10);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (11, 11, '2023-02-01 18:49:35', 11, 11);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (12, 12, '2020-07-12 01:20:58', 12, 12);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (13, 13, '2019-05-18 10:24:45', 13, 13);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (14, 14, '2021-08-26 09:12:49', 14, 14);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (15, 15, '2022-01-08 10:00:44', 15, 15);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (16, 16, '2019-12-19 08:36:36', 16, 1);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (17, 17, '2019-06-14 01:55:03', 17, 2);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (18, 18, '2022-01-04 09:58:53', 18, 3);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (19, 19, '2020-10-18 16:29:22', 19, 4);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (20, 20, '2023-08-16 12:26:10', 20, 5);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (21, 21, '2019-10-15 17:44:32', 1, 6);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (22, 22, '2020-12-06 14:53:38', 2, 7);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (5, 5, '2023-07-29 05:24:05', 3, 5);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (6, 6, '2019-11-21 11:23:32', 1, 6);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (7, 7, '2022-06-07 17:53:02', 3, 7);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (8, 8, '2019-07-13 17:02:05', 2, 8);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (9, 9, '2019-08-22 18:13:41', 2, 9);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (10, 10, '2020-08-08 11:13:13', 1, 10);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (11, 11, '2023-02-01 18:49:35', 4, 11);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (12, 12, '2020-07-12 01:20:58', 1, 12);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (13, 13, '2019-05-18 10:24:45', 2, 13);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (14, 14, '2021-08-26 09:12:49', 3, 14);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (15, 15, '2022-01-08 10:00:44', 4, 15);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (16, 16, '2019-12-19 08:36:36', 1, 1);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (17, 17, '2019-06-14 01:55:03', 1, 2);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (18, 18, '2022-01-04 09:58:53', 2, 3);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (19, 19, '2020-10-18 16:29:22', 2, 4);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (20, 20, '2023-08-16 12:26:10', 3, 5);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (21, 21, '2019-10-15 17:44:32', 3, 6);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (22, 22, '2020-12-06 14:53:38', 3, 7);
 INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (23, 23, '2022-01-29 12:59:42', 3, 8);
 INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (24, 24, '2021-03-13 18:04:35', 4, 9);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (25, 25, '2019-04-13 08:56:54', 5, 10);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (26, 26, '2020-05-30 04:31:16', 6, 11);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (27, 27, '2023-09-06 14:22:42', 7, 12);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (28, 28, '2021-12-07 09:10:15', 8, 13);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (29, 29, '2021-01-01 11:03:57', 9, 14);
-INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (30, 30, '2022-04-29 14:16:16', 10, 15);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (25, 25, '2019-04-13 08:56:54', 4, 10);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (26, 26, '2020-05-30 04:31:16', 1, 11);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (27, 27, '2023-09-06 14:22:42', 1, 12);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (28, 28, '2021-12-07 09:10:15', 3, 13);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (29, 29, '2021-01-01 11:03:57', 4, 14);
+INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (30, 30, '2022-04-29 14:16:16', 4, 15);
 
 
 #
@@ -288,26 +288,11 @@ INSERT INTO `book2user` (`id`, `book_id`, `time`, `type_id`, `user_id`) VALUES (
 #
 
 
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (1, 'fiwq', 'possimus');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (2, 'euuk', 'facere');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (3, 'clqb', 'repellendus');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (4, 'ikbl', 'repudiandae');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (5, 'gtss', 'id');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (6, 'kzei', 'maxime');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (7, 'oold', 'iste');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (8, 'ctka', 'in');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (9, 'tign', 'qui');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (10, 'vojb', 'similique');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (11, 'hyrl', 'a');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (12, 'rxco', 'dignissimos');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (13, 'ovuy', 'et');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (14, 'buuz', 'sed');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (15, 'ruqk', 'quia');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (16, 'zllh', 'ea');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (17, 'jxjl', 'eum');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (18, 'hibe', 'magni');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (19, 'ppan', 'et');
-INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (20, 'qkud', 'sunt');
+INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (1, 'KEPT', 'Отложена');
+INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (2, 'CART', 'В корзине');
+INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (3, 'PAID', 'Куплена');
+INSERT INTO `book2user_type` (`id`, `code`, `name`) VALUES (4, 'ARCHIVED', 'В архиве');
+
 
 
 #

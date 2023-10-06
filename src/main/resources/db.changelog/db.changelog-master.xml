@@ -2,4 +2,5 @@
 
 <include file="db.changelog/liquibase-outputChangeLog_init.xml"/>
     <!--include file="db.changelog/changelog-1.0.xml"/-->
+    <include file="db.changelog/changelog-2.0.xml"/>
 </databaseChangeLog>
