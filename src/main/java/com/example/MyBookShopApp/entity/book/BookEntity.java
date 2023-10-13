@@ -120,6 +120,11 @@ public class BookEntity {
 
     @Getter
     @Setter
+
+   // @JsonSerialize(using = LocalDateTimeSerializer.class)
+   // @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    //@JsonFormat
+      //      (shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     @ApiModelProperty("date of book publication")
     @Column(columnDefinition = "TIMESTAMP NOT NULL")
     private LocalDateTime pubDate;

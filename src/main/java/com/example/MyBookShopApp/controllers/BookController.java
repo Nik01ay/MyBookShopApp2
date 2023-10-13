@@ -46,6 +46,8 @@ public class BookController {
     @GetMapping(value = {"/books/recent"})
     public String getRecentResult(Model model) {
         model.addAttribute("newBooks", bookService.getPageOfDateBooks(LocalDate.now().minusYears(100), LocalDate.now() , 0, 5).getContent());
+        System.out.println(LocalDate.now().minusYears(100));
+        System.out.println(LocalDate.now());
         System.out.println(bookService.getPageOfDateBooks(LocalDate.now().minusYears(100), LocalDate.now(), 0, 5).getContent());
         return "books/recent";
     }
@@ -54,13 +56,13 @@ public class BookController {
     @GetMapping(value = {"/books/recent/page{from, to}" })//?from=06.09.2023&to=06.10.2023&offset=0&limit=20
 
     @ResponseBody
-    public BookPageDto getNextRecentPage(
+    public  BookPageDto getNextRecentPage(
             @RequestParam("from") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate fromDate,
             @RequestParam("to") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate toDate,
             @RequestParam(value = "offset", defaultValue = "0") Integer offset,
             @RequestParam(value = "limit", defaultValue = "20") Integer limit) {
-        System.out.println(fromDate+ "-a-" + toDate);
         return new BookPageDto(bookService.getPageOfDateBooks(fromDate, toDate, offset, limit).getContent());
+
 
     }
 
@@ -69,12 +71,20 @@ public class BookController {
 
 
     @GetMapping("/books/popular")
-    public String booksPopularPage(){
+    public String booksPopularPage(Model model,
+                                   @RequestParam(value = "offset", defaultValue = "0") Integer offset,
+                                   @RequestParam(value = "limit", defaultValue = "4") Integer limit)
+    {
+           BookPageDto bookDTO = new BookPageDto(bookService.getPageofPopularBooks(0.7, offset,limit).getContent());
+            model.addAttribute("books", bookDTO.getBooks());
         return "books/popular";
     }
 
     @GetMapping("/genres/index")
     public String genresIndexPage(){
+
+
+
         return "genres/index";
     }
 
