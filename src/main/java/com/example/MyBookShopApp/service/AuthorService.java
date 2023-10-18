@@ -25,5 +25,8 @@ public class AuthorService {
         System.out.println(authors.size());
         return authors.stream().collect(Collectors.groupingBy((AuthorEntity a)->{return a.getName().substring(0,1);}));
     }
+    public AuthorEntity getAuthorBySlug(String slug){
+        return authorRepository.findBySlug(slug);
+    }
 }
 

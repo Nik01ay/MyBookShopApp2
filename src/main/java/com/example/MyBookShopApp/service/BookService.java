@@ -4,6 +4,7 @@ import com.example.MyBookShopApp.entity.book.BookEntity;
 import com.example.MyBookShopApp.model.RatingBook;
 import com.example.MyBookShopApp.repository.Book2UserRepository;
 import com.example.MyBookShopApp.repository.BookRepository;
+import com.example.MyBookShopApp.repository.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,11 +23,13 @@ public class BookService {
     private BookRepository bookRepository;
     private Book2UserRepository book2UserRepository;
 
+    private TagRepository tagRepository;
 
     @Autowired
-    public BookService(BookRepository bookRepository, Book2UserRepository book2UserRepository) {
+    public BookService(BookRepository bookRepository, Book2UserRepository book2UserRepository, TagRepository tagRepository) {
         this.bookRepository = bookRepository;
         this.book2UserRepository = book2UserRepository;
+        this.tagRepository = tagRepository;
     }
 
     public List<BookEntity> getBooksData() {
@@ -42,6 +45,10 @@ public class BookService {
 
     public List<BookEntity> getBooksWithPriceBetween(Integer min, Integer max) {
         return bookRepository.findBooksByPriceOldBetween(min, max);
+    }
+
+    public BookEntity  getBookBySlug(String slug){
+        return bookRepository.findBooksBySlug(slug);
     }
 
     public List<BookEntity> getBooksByTitle(String title) {
@@ -76,6 +83,18 @@ public class BookService {
 
         return bookRepository.findByPubDateBetween(fromDate.atStartOfDay(), toDate.atStartOfDay(), nextPage);
     }
+
+    public Page<BookEntity> getPageOfGenreBooks(String  genreSlug,  Integer offset, Integer limit) {
+        Pageable nextPage = PageRequest.of(offset, limit);
+
+        return bookRepository.findByGenreSlug(genreSlug, nextPage);
+    }
+    public Page<BookEntity> getPageOfAuthorSlugBooks(String  authorSlug,  Integer offset, Integer limit) {
+        Pageable nextPage = PageRequest.of(offset, limit);
+
+        return bookRepository.findByAuthorSlug(authorSlug, nextPage);
+    }
+
 
     public Page<BookEntity> getPageofPopularBooks(Double minRaiting, Integer offset, Integer limit) {
         Pageable nextPage = PageRequest.of(offset, limit);
@@ -127,6 +146,13 @@ public class BookService {
         );
         return ref.result;
     }
+
+    public Page<BookEntity> getPageOfTagBooks(Integer tagId, Integer offset, Integer limit){
+        Pageable nextPage = PageRequest.of(offset, limit);
+        String tagName = tagRepository.findById(tagId).get().getName();
+        return bookRepository.findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(tagName,tagName, nextPage);
+    }
+
 
 }
 

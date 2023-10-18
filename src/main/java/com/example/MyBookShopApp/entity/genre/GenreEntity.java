@@ -13,14 +13,14 @@ public class GenreEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Getter
     @Setter
     @ManyToMany (mappedBy = "genres")
     List<BookEntity> books;
     @Column(columnDefinition = "INT")
-    private int parentId;
+    private Integer parentId;
 
     @Column(columnDefinition = "VARCHAR(255) NOT NULL")
     private String slug;
@@ -36,11 +36,11 @@ public class GenreEntity {
         this.id = id;
     }
 
-    public int getParentId() {
+    public Integer getParentId() {
         return parentId;
     }
 
-    public void setParentId(int parentId) {
+    public void setParentId(Integer parentId) {
         this.parentId = parentId;
     }
 

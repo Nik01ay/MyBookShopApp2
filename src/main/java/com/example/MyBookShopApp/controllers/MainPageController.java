@@ -4,7 +4,9 @@ package com.example.MyBookShopApp.controllers;
 import com.example.MyBookShopApp.entity.book.BookEntity;
 import com.example.MyBookShopApp.model.BookPageDto;
 import com.example.MyBookShopApp.model.SearchWordDto;
+import com.example.MyBookShopApp.model.TagModel;
 import com.example.MyBookShopApp.service.BookService;
+import com.example.MyBookShopApp.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,27 +20,29 @@ import java.util.List;
 public class MainPageController {
 
     private final BookService bookService;
+    private final TagService tagService;
 
     @Autowired
-    public MainPageController(BookService bookService) {
+    public MainPageController(BookService bookService, TagService tagService) {
         this.bookService = bookService;
+        this.tagService = tagService;
     }
 
     @ModelAttribute("recommendedBooks")
-    public List<BookEntity> recommendedBooks(){
+    public List<BookEntity> recommendedBooks() {
         return bookService.getBooksData();
     }
 
     @ModelAttribute("newBooks")
-    public List<BookEntity> newBooks(){
-        return bookService.getPageOfDateBooks(LocalDate.now().minusMonths(45), LocalDate.now(),0, 5).getContent();
+    public List<BookEntity> newBooks() {
+        return bookService.getPageOfDateBooks(LocalDate.now().minusMonths(45), LocalDate.now(), 0, 5).getContent();
     }
 
 
     @ModelAttribute("popularBooks")
-    public List<BookEntity> popularBooks(){
-        bookService.calculateRatingAllBooksAndSave();
-        return bookService.getPageofPopularBooks(0.5,0,5).getContent();
+    public List<BookEntity> popularBooks() {
+        // bookService.calculateRatingAllBooksAndSave();
+        return bookService.getPageofPopularBooks(0.5, 0, 5).getContent();
 
     }
 
@@ -54,40 +58,51 @@ public class MainPageController {
     }
 
 
+    @ModelAttribute("tagList")
+    public List<TagModel> tagList() {
+        return tagService.getFirst(40);
+
+    }
+
     @GetMapping("/")
-    public String mainPage(){
+    public String mainPage() {
+        // tagService.refreshAllTag();
         return "index.html";
     }
 
 
     @GetMapping("/postponed")
-    public String postponedPage(){
+    public String postponedPage() {
         return "postponed";
     }
+
     @GetMapping("/cart")
-    public String cartPage(){
+    public String cartPage() {
         return "cart";
     }
+
     @GetMapping("/signin")
-    public String signinPage(){
+    public String signinPage() {
         return "signin";
     }
+
     @GetMapping("/about")
-    public String aboutPage(){
+    public String aboutPage() {
         return "about";
     }
+
     @GetMapping("/faq")
-    public String faqPage(){
+    public String faqPage() {
         return "faq";
     }
 
     @GetMapping("/contacts")
-    public String contactPage(){
+    public String contactPage() {
         return "contacts";
     }
 
     @GetMapping("/documents/index")
-    public String docIndexPage(){
+    public String docIndexPage() {
         return "/documents/index";
     }
 
@@ -111,10 +126,20 @@ public class MainPageController {
     @GetMapping("/search/page/{searchWord}")
     @ResponseBody
     public BookPageDto getNextSearchPage(@RequestParam("offset") Integer offset,
-                                          @RequestParam("limit") Integer limit,
-                                          @PathVariable(value = "searchWord", required = false) SearchWordDto searchWordDto) {
+                                         @RequestParam("limit") Integer limit,
+                                         @PathVariable(value = "searchWord", required = false) SearchWordDto searchWordDto) {
         return new BookPageDto(bookService.getPageOfSearchResultBooks(searchWordDto.getExample(), offset, limit).getContent());
     }
 
+    @GetMapping("/tags/{id}")
+    public String getTagPage(@RequestParam(name = "offset", defaultValue = "0") Integer offset,
+                                  @RequestParam(name = "limit", defaultValue = "5") Integer limit,
+                                  @PathVariable("id") Integer id,
+                             Model model) {
+        System.out.println(id);
+        model.addAttribute("tag", TagModel.toModel(tagService.getById(id)));
+        model.addAttribute("books", bookService.getPageOfTagBooks(id, offset, limit).getContent());
+        return "tags/index";
+    }
 
 }

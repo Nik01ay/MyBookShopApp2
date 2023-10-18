@@ -2,16 +2,14 @@ package com.example.MyBookShopApp.controllers;
 
 
 import com.example.MyBookShopApp.entity.book.BookEntity;
+import com.example.MyBookShopApp.model.BookModel;
 import com.example.MyBookShopApp.model.BookPageDto;
 import com.example.MyBookShopApp.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -51,7 +49,13 @@ public class BookController {
         System.out.println(bookService.getPageOfDateBooks(LocalDate.now().minusYears(100), LocalDate.now(), 0, 5).getContent());
         return "books/recent";
     }
-
+    @GetMapping("/books/{slug}")
+    public String getBookbySlug(Model model,
+                                @PathVariable(name = "slug", required = true) String slug) {
+        System.out.println(slug);
+        model.addAttribute("book", BookModel.toModel(bookService.getBookBySlug(slug)));
+        return "books/slug";
+    }
 
     @GetMapping(value = {"/books/recent/page{from, to}" })//?from=06.09.2023&to=06.10.2023&offset=0&limit=20
 
@@ -80,12 +84,6 @@ public class BookController {
         return "books/popular";
     }
 
-    @GetMapping("/genres/index")
-    public String genresIndexPage(){
 
-
-
-        return "genres/index";
-    }
 
 }

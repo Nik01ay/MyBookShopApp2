@@ -47,18 +47,20 @@ public class BookModel {
 
     public static BookModel toModel(BookEntity entity) {
         BookModel model = new BookModel();
-        model.setId(entity.getId());
-        model.setPrice(entity.getPrice());
-        model.setPriceOld(entity.getPriceOld());
-        model.setDiscount(entity.getPriceOld());
-        model.setDescription(entity.getDescription());
-        model.setImage(entity.getImage());
-        model.setIsBestseller(entity.getIsBestseller());
-        model.setPubDate(entity.getPubDate());
-        model.setRaiting(entity.getRaiting());
-        model.setSlug(entity.getSlug());
-        model.setTitle(entity.getTitle());
-        model.setAuthors(entity.getAuthors().stream().findFirst().get().getName());
+        if (entity!=null) {
+            model.setId(entity.getId());
+            model.setPrice(entity.getPrice());
+            model.setPriceOld(entity.getPriceOld());
+            model.setDiscount(entity.getPriceOld());
+            model.setDescription(entity.getDescription());
+            model.setImage(entity.getImage());
+            model.setIsBestseller(entity.getIsBestseller());
+            model.setPubDate(entity.getPubDate());
+            model.setRaiting(entity.getRaiting());
+            model.setSlug(entity.getSlug());
+            model.setTitle(entity.getTitle());
+            model.setAuthors(entity.getAuthors().stream().findFirst().get().getName());
+        }
         return model;
     }
 }

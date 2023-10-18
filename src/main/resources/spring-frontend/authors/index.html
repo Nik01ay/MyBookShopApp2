@@ -47,7 +47,7 @@
                         <h2 class="Authors-title" th:id="${authorGroup['key']}" th:text="${authorGroup['key']}"> А
                         </h2>
                         <div class="Authors-letter" th:each="author : ${authorGroup['value']}">
-                            <div class="Authors-item"><a href="/authors/slug.html" th:text="${author.name}">Абгарян
+                            <div class="Authors-item"><a th:href="@{/authors/{id}(id=${author.slug})}" href="/authors/slug.html" th:text="${author.name}">Абгарян
                                 Наринэ</a>
 
 

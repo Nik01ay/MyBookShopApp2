@@ -7,7 +7,7 @@ public interface AuthorRepository extends JpaRepository<AuthorEntity, Integer> {
 
 
      AuthorEntity findByName(String name);
-
+     AuthorEntity findBySlug(String slug);
 
    // List<AuthorEntity> getAuthorEntityList();
 
