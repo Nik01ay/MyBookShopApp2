@@ -153,6 +153,9 @@ public class BookService {
         return bookRepository.findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(tagName,tagName, nextPage);
     }
 
+    public void save(BookEntity book){
+        bookRepository.save(book);
+    }
 
 }
 

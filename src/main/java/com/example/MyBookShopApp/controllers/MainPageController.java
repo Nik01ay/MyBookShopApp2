@@ -2,6 +2,7 @@ package com.example.MyBookShopApp.controllers;
 
 
 import com.example.MyBookShopApp.entity.book.BookEntity;
+import com.example.MyBookShopApp.model.BookModel;
 import com.example.MyBookShopApp.model.BookPageDto;
 import com.example.MyBookShopApp.model.SearchWordDto;
 import com.example.MyBookShopApp.model.TagModel;
@@ -29,20 +30,22 @@ public class MainPageController {
     }
 
     @ModelAttribute("recommendedBooks")
-    public List<BookEntity> recommendedBooks() {
-        return bookService.getBooksData();
+    public List<BookModel> recommendedBooks() {
+        return bookService.getBooksData().stream().map(BookModel::toModel).toList();
     }
 
     @ModelAttribute("newBooks")
-    public List<BookEntity> newBooks() {
-        return bookService.getPageOfDateBooks(LocalDate.now().minusMonths(45), LocalDate.now(), 0, 5).getContent();
+    public List<BookModel> newBooks() {
+        return bookService.getPageOfDateBooks(LocalDate.now().minusMonths(45), LocalDate.now(), 0, 5).getContent()
+                .stream().map(BookModel::toModel).toList();
     }
 
 
     @ModelAttribute("popularBooks")
-    public List<BookEntity> popularBooks() {
+    public List<BookModel> popularBooks() {
         // bookService.calculateRatingAllBooksAndSave();
-        return bookService.getPageofPopularBooks(0.5, 0, 5).getContent();
+        return bookService.getPageofPopularBooks(0.5, 0, 5).getContent()
+                .stream().map(BookModel::toModel).toList();
 
     }
 

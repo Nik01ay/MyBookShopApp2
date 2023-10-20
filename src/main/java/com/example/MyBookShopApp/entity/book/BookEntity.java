@@ -1,6 +1,7 @@
 package com.example.MyBookShopApp.entity.book;
 
 import com.example.MyBookShopApp.entity.AuthorEntity;
+import com.example.MyBookShopApp.entity.book.file.BookFileEntity;
 import com.example.MyBookShopApp.entity.book.file.FileDownloadEntity;
 import com.example.MyBookShopApp.entity.book.review.BookReviewEntity;
 import com.example.MyBookShopApp.entity.genre.GenreEntity;
@@ -12,6 +13,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -50,6 +52,8 @@ public class BookEntity {
     )
     List<UserEntity> users;
 
+
+
     @Getter
     @Setter
     @OneToMany (mappedBy = "book")
@@ -65,6 +69,11 @@ public class BookEntity {
     @Setter
     @OneToMany (mappedBy = "book")
     List<BalanceTransactionEntity> balanceTransactions;
+
+    @Getter
+    @Setter
+    @OneToMany(mappedBy = "book")
+    private List<BookFileEntity> bookFileEntityList = new ArrayList<>();
 
     @Getter
     @Setter
